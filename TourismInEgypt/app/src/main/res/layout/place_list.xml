@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/no_list_item_message_container">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="there is nothing available to show at the current time"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"/>
+
+    </RelativeLayout>
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="auto_fit"
+        android:drawSelectorOnTop="true"
+        android:id="@+id/grid_list"/>
+
+</RelativeLayout>
