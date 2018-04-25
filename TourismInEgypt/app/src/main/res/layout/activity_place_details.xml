@@ -1,48 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#323232">
+    android:fitsSystemWindows="true">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#323232">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="#323232">
+            android:background="#323232"
+            android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/place_image_view"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:src="@drawable/_attraction_alexandria_national__museum"
                 android:scaleType="centerCrop"
-                android:id="@+id/place_image_view"/>
+                android:src="@drawable/_attraction_alexandria_national__museum" />
 
             <TextView
+                android:id="@+id/place_name_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
+                android:layout_marginTop="24dp"
                 android:text="Place Title "
-                android:textAppearance="?android:textAppearanceLarge"
-                android:textStyle="bold"
-                android:textColor="#808080"
                 android:textAlignment="center"
-                android:id="@+id/place_name_text_view"/>
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="#808080"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/place_details_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="24dp"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textStyle="bold"
-                android:text="This is where the place details appear."
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:id="@+id/place_details_text_view"
-                android:textColor="#FFFFFF"/>
+                android:layout_marginTop="24dp"
+                android:text="This is where the place details appear."
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-</android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
