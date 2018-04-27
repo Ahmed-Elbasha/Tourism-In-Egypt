@@ -24,7 +24,36 @@
                 android:layout_height="250dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/_attraction_alexandria_national__museum" />
+            
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:id="@+id/show_position_button">
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/place_icon"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/place_icon_image_view"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show Location"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@android:color/white"
+                    android:layout_toRightOf="@id/place_icon_image_view"
+                    android:layout_marginLeft="16dp"/>
+                
+            </RelativeLayout>
             <TextView
                 android:id="@+id/place_name_text_view"
                 android:layout_width="match_parent"

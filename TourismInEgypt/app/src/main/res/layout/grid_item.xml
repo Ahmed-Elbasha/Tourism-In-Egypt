@@ -29,7 +29,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:paddingLeft="16dp"
-            android:paddingBottom="8dp"/>
+            android:paddingBottom="8dp"
+            android:background="#69424242"/>
 
     </RelativeLayout>
 

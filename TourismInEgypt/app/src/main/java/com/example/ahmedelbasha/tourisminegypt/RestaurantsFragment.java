@@ -96,16 +96,27 @@ public class RestaurantsFragment extends Fragment {
 
         final ArrayList<Place> places = new ArrayList<Place>();
 
-        places.add(new Place("China House On The Rooftop Of Cecil Hotel", chinaHouseOnTheRooftopOfCecilHotelDetails, R.drawable.restraunt_china_house_cecil_resto));
-        places.add(new Place("Greek Club Restaurant", greekClubRestaurantDetails, R.drawable.restraunt_greek_club));
-        places.add(new Place("Latino Café", latinoCaféDetails, R.drawable.restraunt_latino_cafe));
-        places.add(new Place("San Giovanni Restaurant", sanGiovanniRestaurantDetails, R.drawable.restraunt_sangiovanni));
-        places.add(new Place("Zanilli's Café", zanillisCaféDetails, R.drawable.restraunt_zanillis_cafe));
-        places.add(new Place("Skyroof Windsor Palace", skyroofWindsorPalaceDetails, R.drawable.restraunt_skyroof));
-        places.add(new Place("Santa Lucia", santaLuciaDetails, R.drawable.restraunt_santalucia));
-        places.add(new Place("Calithea", calitheaDetails, R.drawable.restraunt_calithea));
-        places.add(new Place("Chez Gaby", chezGabyDetails, R.drawable.restraunt_chezgaby));
-        places.add(new Place("Trianon1905", trianon1905Details, R.drawable.restraunt_trianon));
+        String chinaHouseOnTheRooftopOfCecilHotelPosition = "31.2008639,29.8984339,21z";
+        String greekClubRestaurantPosition = "31.2119123,29.8836057,19.24z";
+        String latinoCaféPosition = "31.224501,29.9523374,20.23z";
+        String sanGiovanniRestaurantPosition = "31.2338316,29.9474851,19.49z";
+        String zanillisCaféPosition = "31.2914442,30.0221621,19.01z";
+        String skyroofWindsorPalacePosition = "31.2003378,29.8971572,19.85z";
+        String santaLuciaPosition = "31.1981673,29.9034727,19.45z";
+        String calitheaPosition =  "31.2019034,29.9009534,19.82z";
+        String chezGabyPosition = "31.1968727,29.9025134,19.35z";
+        String trianon1905Position = "31.2008303,29.9004885,19.61z";
+
+        places.add(new Place("China House On The Rooftop Of Cecil Hotel", chinaHouseOnTheRooftopOfCecilHotelDetails, R.drawable.restraunt_china_house_cecil_resto, chinaHouseOnTheRooftopOfCecilHotelPosition));
+        places.add(new Place("Greek Club Restaurant", greekClubRestaurantDetails, R.drawable.restraunt_greek_club, greekClubRestaurantPosition));
+        places.add(new Place("Latino Café", latinoCaféDetails, R.drawable.restraunt_latino_cafe, latinoCaféPosition));
+        places.add(new Place("San Giovanni Restaurant", sanGiovanniRestaurantDetails, R.drawable.restraunt_sangiovanni, sanGiovanniRestaurantPosition));
+        places.add(new Place("Zanilli's Café", zanillisCaféDetails, R.drawable.restraunt_zanillis_cafe, zanillisCaféPosition));
+        places.add(new Place("Skyroof Windsor Palace", skyroofWindsorPalaceDetails, R.drawable.restraunt_skyroof, skyroofWindsorPalacePosition));
+        places.add(new Place("Santa Lucia", santaLuciaDetails, R.drawable.restraunt_santalucia, santaLuciaPosition));
+        places.add(new Place("Calithea", calitheaDetails, R.drawable.restraunt_calithea, calitheaPosition));
+        places.add(new Place("Chez Gaby", chezGabyDetails, R.drawable.restraunt_chezgaby,chezGabyPosition));
+        places.add(new Place("Trianon1905", trianon1905Details, R.drawable.restraunt_trianon, trianon1905Position));
 
         placeAdapter = new PlaceAdapter(getActivity(), places);
 

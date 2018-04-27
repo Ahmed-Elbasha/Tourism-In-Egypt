@@ -60,17 +60,27 @@ public class PublicPlaceFragment extends Fragment {
                 "The Al-Montaza Park, the former expansive royal gardens of 150 acres (61 ha), are open as a public landscape park and forest reserve." + "\n\n" +
                 "The Al-Haramlik—Montaza Palace is a public museum of the Muhammad Ali Dynasty family history and objects d'art. The Salamlek Palace is now an adjacent hotel.";
 
+        String shallalatGardensPosition = "31.2001737,29.9123548,21z";
+        String montazaParkPosition = "31.2886093,30.0159936,18.72z";
+        String alexandriaNationalMuseumPosition = "31.2009903,29.9134793,18.85z";
+        String alexandriaArtCenterPosition = "31.195612,29.9000811,19.54z";
+        String alexandriaOperaHousePosition = "31.196944,29.9019515,19.65z";
+        String fawziaFahmyPalacePosition = "31.2408388,29.9633375,19.57z";
+        String sanStefanoGrandPlazaPosition = "31.2454501,29.9670408,19.27z";
+        String alexandriaNavalUnknownSoldierMemorialPosition = "31.1999412,29.8937676,20.15z";
+        String montazaPalacePosition = "31.2885521,30.0160432,19.27z";
+
         final ArrayList<Place> places = new ArrayList<Place>();
 
-        places.add(new Place("Shallalat Gardens", shallalatGardensDetails, R.drawable.public_shalalat_gardens));
-        places.add(new Place("Montaza Park", montazaParkDetails, R.drawable.public_montaza_park_bridge));
-        places.add(new Place("Alexandria National Museum", alexandriaNationalMuseumDetails, R.drawable.public_alexandria_national_museum));
-        places.add(new Place("Alexandria Art Center", alexandriaArtCenterDetails, R.drawable.public_alexandria_art_center));
-        places.add(new Place("Alexandria Opera House", alexandriaOperaHouseDetails, R.drawable.public_alexandria_opera_house));
-        places.add(new Place("Fawzia Fahmy Palace", fawziaFahmyPalaceDetails, R.drawable.public_fawzia_fahmy_palace));
-        places.add(new Place("San Stefano Grand Plaza", sanStefanoGrandPlazaDetails, R.drawable.public_san_stefano_grand_plaza));
-        places.add(new Place("Alexandria Naval Unknown Soldier Memorial", alexandriaNavalUnknownSoldierMemorialDetails, R.drawable.public_monument_of_the_navy_unknown_soldier_in_alexandria));
-        places.add(new Place("Montaza Palace", montazaPalaceDetails, R.drawable.public_alexandria_montazah_palace));
+        places.add(new Place("Shallalat Gardens", shallalatGardensDetails, R.drawable.public_shalalat_gardens, shallalatGardensPosition));
+        places.add(new Place("Montaza Park", montazaParkDetails, R.drawable.public_montaza_park_bridge, montazaParkPosition));
+        places.add(new Place("Alexandria National Museum", alexandriaNationalMuseumDetails, R.drawable.public_alexandria_national_museum, alexandriaNationalMuseumPosition));
+        places.add(new Place("Alexandria Art Center", alexandriaArtCenterDetails, R.drawable.public_alexandria_art_center, alexandriaArtCenterPosition));
+        places.add(new Place("Alexandria Opera House", alexandriaOperaHouseDetails, R.drawable.public_alexandria_opera_house, alexandriaOperaHousePosition));
+        places.add(new Place("Fawzia Fahmy Palace", fawziaFahmyPalaceDetails, R.drawable.public_fawzia_fahmy_palace, fawziaFahmyPalacePosition));
+        places.add(new Place("San Stefano Grand Plaza", sanStefanoGrandPlazaDetails, R.drawable.public_san_stefano_grand_plaza, sanStefanoGrandPlazaPosition));
+        places.add(new Place("Alexandria Naval Unknown Soldier Memorial", alexandriaNavalUnknownSoldierMemorialDetails, R.drawable.public_monument_of_the_navy_unknown_soldier_in_alexandria, alexandriaNavalUnknownSoldierMemorialPosition));
+        places.add(new Place("Montaza Palace", montazaPalaceDetails, R.drawable.public_alexandria_montazah_palace, montazaPalacePosition));
 
         placeAdapter = new PlaceAdapter(getActivity(), places);
 

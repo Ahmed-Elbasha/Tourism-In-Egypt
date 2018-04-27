@@ -30,6 +30,6 @@
         android:drawSelectorOnTop="true"
         android:id="@+id/grid_list"
         android:horizontalSpacing="16dp"
-        android:verticalSpacing="24dp"/>
+        android:verticalSpacing="24dp" />
 
 </RelativeLayout>

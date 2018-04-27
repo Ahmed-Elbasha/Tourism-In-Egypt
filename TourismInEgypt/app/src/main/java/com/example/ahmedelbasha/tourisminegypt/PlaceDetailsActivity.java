@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.ColorInt;
 import android.support.constraint.ConstraintLayout;
@@ -24,6 +25,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -42,7 +44,7 @@ public class PlaceDetailsActivity extends AppCompatActivity {
         String placeName = receiveDataFromFragmentIntent.getStringExtra("Place Name");
         String placeDetails = receiveDataFromFragmentIntent.getStringExtra("Place Details");
         int placeImageResourceId = receiveDataFromFragmentIntent.getIntExtra("Place Image Id", 0);
-
+        String placeLocation = receiveDataFromFragmentIntent.getStringExtra("Place Position");
         setTitle(placeName);
 
         setContentView(R.layout.activity_place_details);
@@ -61,5 +63,23 @@ public class PlaceDetailsActivity extends AppCompatActivity {
 
         TextView placeDetailsTextView = findViewById(R.id.place_details_text_view);
         placeDetailsTextView.setText(placeDetails);
+
+        final Uri placeGeoLocation = Uri.parse("geo:" + placeLocation);
+
+        RelativeLayout showPositionButton = findViewById(R.id.show_position_button);
+        showPositionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPlacePositionIntent(placeGeoLocation);
+            }
+        });
+    }
+
+    private void showPlacePositionIntent(Uri location) {
+        Intent showPlacePositionIntent = new Intent(Intent.ACTION_VIEW);
+        showPlacePositionIntent.setData(location);
+        if (showPlacePositionIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(showPlacePositionIntent);
+        }
     }
 }

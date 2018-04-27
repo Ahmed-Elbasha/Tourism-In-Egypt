@@ -89,19 +89,31 @@ public class AttractionsFragment extends Fragment {
                 "After some years of mapping and searching the area, Frank Goddio, the French leader of the underwater team of archaeologists, was able to announce before the end of 1998 that he had discovered the royal palace of Cleopatra (51-30 B.C.), the last of the Ptolemaic rulers." + "\n\n" +
                 "Goddio’s divers found marble floors on the seabed which he believes established for the first time the precise location of Cleopatra’s palace. They also found lumps of red granite and broken columns on the submerged island of Antirhodos, which provided Goddio with further evidence of the site of the royal quarters. Remains of Cleopatra’s royal palace were retrieved from beneath the waters of the Mediterranean Sea where they had disappeared for 17 centuries. The divers reported seeing columns and capitals in disorder, kilns and basins - some of which were described as the so-called ‘Baths of Cleopatra’; great blocks of dressed limestone, statues of Egyptian divinities, and even walls.";
 
+        String bibliothecaAlexandrinaPosition = "31.2087254,29.9093719,18.89z";
+        String alexandriaNationalMuseumPosition = "31.2010264,29.9133883,19.94z";
+        String theCavafyMuseumposition = "31.1977421,29.901181,21z";
+        String graecoRomanMuseumPosition = "31.1991584,29.906553,21z";
+        String royalJewelryMuseumPosition = "31.2407267,29.9633769,19.84z";
+        String theMuseumOfFineArtsPosition = "31.1947906,29.9139564,19.19z";
+        String abuAlAbbasAlMursiMosquePosition = "31.2057342,29.8826337,19.09z";
+        String pompeysPillarPosition = "31.1822872,29.8965661,18.74z";
+        String caesareumOfAlexandriaPosition = "31.2009638,29.8995105,20.06z";
+        String romanAmphitheatrePosition = "31.1944088,29.9044309,19.01z";
+        String underwaterMonumentsPosition = "31.2163161,29.9416618,20.26z";
+
         final ArrayList<Place> places = new ArrayList<Place>();
 
-        places.add(new Place("Bibliotheca Alexandrina", bibliothecaAlexandrinaDetails, R.drawable.attraction_bibliotheca__alexandrina));
-        places.add(new Place("Alexandria National Museum", alexandriaNationalMuseumDetails, R.drawable._attraction_alexandria_national__museum));
-        places.add(new Place("The Cavafy Museum", theCavafyMuseumDetails, R.drawable.attraction_alex_cavafy_house));
-        places.add(new Place("Graeco Roman Museum", graecoRomanMuseumDetails, R.drawable.attraction_graeco_roman__museum));
-        places.add(new Place("Royal Jewelry Museum", royalJewelryMuseumDetails, R.drawable.attraction_alex_royal_jewellery_musleft));
-        places.add(new Place("The Museum Of Fine Arts", theMuseumOfFineArtsDetails, R.drawable.attraction_fine_arts_museum));
-        places.add(new Place("Abu Al-Abbas Al-Mursi Mosque", abuAlAbbasAlMursiMosqueDetails, R.drawable.attraction_abu___abbas_almursi__mosque_));
-        places.add(new Place("Pompey's Pillar", pompeysPillarDetails, R.drawable.attraction_pompeys_pillar));
-        places.add(new Place("Caesareum Of Alexandria", caesareumOfAlexandriaDetails, R.drawable.attraction_ruins_of_cesareum));
-        places.add(new Place("Roman Amphitheatre", romanAmphitheatreDetails, R.drawable.attraction_roma__amphitheatre));
-        places.add(new Place("Underwater Monuments", underwaterMonumentsDetails, R.drawable.attraction_underwater_mounments));
+        places.add(new Place("Bibliotheca Alexandrina", bibliothecaAlexandrinaDetails, R.drawable.attraction_bibliotheca__alexandrina, bibliothecaAlexandrinaPosition));
+        places.add(new Place("Alexandria National Museum", alexandriaNationalMuseumDetails, R.drawable._attraction_alexandria_national__museum, alexandriaNationalMuseumPosition));
+        places.add(new Place("The Cavafy Museum", theCavafyMuseumDetails, R.drawable.attraction_alex_cavafy_house, theCavafyMuseumposition));
+        places.add(new Place("Graeco Roman Museum", graecoRomanMuseumDetails, R.drawable.attraction_graeco_roman__museum, graecoRomanMuseumPosition));
+        places.add(new Place("Royal Jewelry Museum", royalJewelryMuseumDetails, R.drawable.attraction_alex_royal_jewellery_musleft, royalJewelryMuseumPosition));
+        places.add(new Place("The Museum Of Fine Arts", theMuseumOfFineArtsDetails, R.drawable.attraction_fine_arts_museum, theMuseumOfFineArtsPosition));
+        places.add(new Place("Abu Al-Abbas Al-Mursi Mosque", abuAlAbbasAlMursiMosqueDetails, R.drawable.attraction_abu___abbas_almursi__mosque_, abuAlAbbasAlMursiMosquePosition));
+        places.add(new Place("Pompey's Pillar", pompeysPillarDetails, R.drawable.attraction_pompeys_pillar, pompeysPillarPosition));
+        places.add(new Place("Caesareum Of Alexandria", caesareumOfAlexandriaDetails, R.drawable.attraction_ruins_of_cesareum, caesareumOfAlexandriaPosition));
+        places.add(new Place("Roman Amphitheatre", romanAmphitheatreDetails, R.drawable.attraction_roma__amphitheatre, romanAmphitheatrePosition));
+        places.add(new Place("Underwater Monuments", underwaterMonumentsDetails, R.drawable.attraction_underwater_mounments, underwaterMonumentsPosition));
 
         placeAdapter = new PlaceAdapter(getActivity(), places);
 
@@ -126,6 +138,7 @@ public class AttractionsFragment extends Fragment {
                 transferDataToPlaceDetailsActivityIntent.putExtra("Place Name", currentPlace.getPlaceName());
                 transferDataToPlaceDetailsActivityIntent.putExtra("Place Details", currentPlace.getPlaceDetails());
                 transferDataToPlaceDetailsActivityIntent.putExtra("Place Image Id", currentPlace.getPlaceImageResourceId());
+                transferDataToPlaceDetailsActivityIntent.putExtra("Place Position", currentPlace.getPlacePosition());
                 startActivity(transferDataToPlaceDetailsActivityIntent);
             }
         });
