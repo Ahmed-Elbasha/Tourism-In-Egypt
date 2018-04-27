@@ -12,6 +12,8 @@ import android.os.Build;
 import android.support.annotation.ColorInt;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.app.NavUtils;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.WindowInsetsCompat;
@@ -20,6 +22,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -53,6 +56,7 @@ public class PlaceDetailsActivity extends AppCompatActivity {
 //        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
 //        actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         ImageView placeImageView = findViewById(R.id.place_image_view);
@@ -76,10 +80,26 @@ public class PlaceDetailsActivity extends AppCompatActivity {
     }
 
     private void showPlacePositionIntent(Uri location) {
-        Intent showPlacePositionIntent = new Intent(Intent.ACTION_VIEW);
-        showPlacePositionIntent.setData(location);
+        Intent showPlacePositionIntent = new Intent(Intent.ACTION_VIEW, location);
+//        showPlacePositionIntent.setData(location);
+        showPlacePositionIntent.setPackage("com.google.android.apps.maps");
         if (showPlacePositionIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(showPlacePositionIntent);
         }
+    }
+
+    // navigating to parent activity with possibility to be navigating back from another app's activity.
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent upIntent = NavUtils.getParentActivityIntent(this);
+                if (NavUtils.shouldUpRecreateTask(this, upIntent)) {
+                    TaskStackBuilder.create(this).addNextIntentWithParentStack(upIntent).startActivities();
+                } else {
+                    NavUtils.navigateUpTo(this, upIntent);
+                }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
