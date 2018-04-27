@@ -37,17 +37,21 @@ public class PlaceDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent receiveDataFromFragmentIntent = getIntent();
+
+        String placeName = receiveDataFromFragmentIntent.getStringExtra("Place Name");
+        String placeDetails = receiveDataFromFragmentIntent.getStringExtra("Place Details");
+        int placeImageResourceId = receiveDataFromFragmentIntent.getIntExtra("Place Image Id", 0);
+
+        setTitle(placeName);
+
         setContentView(R.layout.activity_place_details);
 
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
 //        actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
 
-        Intent receiveDataFromFragmentIntent = getIntent();
 
-        String placeName = receiveDataFromFragmentIntent.getStringExtra("Place Name");
-        String placeDetails = receiveDataFromFragmentIntent.getStringExtra("Place Details");
-        int placeImageResourceId = receiveDataFromFragmentIntent.getIntExtra("Place Image Id", 0);
 
         ImageView placeImageView = findViewById(R.id.place_image_view);
         placeImageView.setImageResource(placeImageResourceId);

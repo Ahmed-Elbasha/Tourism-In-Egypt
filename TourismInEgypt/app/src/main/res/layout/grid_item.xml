@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="170dp"
-    android:layout_height="250dp"
-    android:id="@+id/grid_item">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/grid_item"
+    android:background="@android:color/white">
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="200dp"
         android:src="@drawable/attraction_ruins_of_cesareum"
         android:scaleType="centerCrop"
         android:id="@+id/place_image_view"/>
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/place_name_text_container">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Place Name."
+            android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp"
+            android:id="@+id/place_name_text_view"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="16dp"
+            android:paddingBottom="8dp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="this is the shorthanded place details"
+        android:textStyle="normal"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_margin="16dp"
+        android:id="@+id/shorthanded_place_details_text_view"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_below="@id/place_name_text_container"/>
+
+</RelativeLayout>

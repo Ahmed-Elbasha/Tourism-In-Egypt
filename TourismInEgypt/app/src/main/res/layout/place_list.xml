@@ -26,10 +26,10 @@
     <GridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="auto_fit"
+        android:numColumns="1"
         android:drawSelectorOnTop="true"
         android:id="@+id/grid_list"
-        android:horizontalSpacing="10dp"
-        android:verticalSpacing="10dp"/>
+        android:horizontalSpacing="16dp"
+        android:verticalSpacing="24dp"/>
 
 </RelativeLayout>

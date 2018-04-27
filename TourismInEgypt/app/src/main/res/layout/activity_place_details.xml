@@ -33,10 +33,11 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="24dp"
                 android:text="Place Title "
-                android:textAlignment="center"
                 android:textAppearance="?android:textAppearanceLarge"
                 android:textColor="#808080"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textAlignment="center"/>
 
             <TextView
                 android:id="@+id/place_details_text_view"

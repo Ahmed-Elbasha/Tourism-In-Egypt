@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +40,12 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
         ImageView placeImageView = gridItemView.findViewById(R.id.place_image_view);
 
         placeImageView.setImageResource(placeImageResourceId);
+
+        TextView placeNameTextView = gridItemView.findViewById(R.id.place_name_text_view);
+        placeNameTextView.setText(currentPlace.getPlaceName());
+
+        TextView shorthandedPlaceDetailsTextView = gridItemView.findViewById(R.id.shorthanded_place_details_text_view);
+        shorthandedPlaceDetailsTextView.setText(currentPlace.getPlaceDetails());
 
         return gridItemView;
     }
